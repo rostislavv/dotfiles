@@ -1,5 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+scriptencoding utf-8
+set encoding=utf-8
 
 call plug#begin()
 
@@ -61,6 +63,7 @@ Plug 'posva/vim-vue'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
 Plug 'crusoexia/vim-monokai'
+Plug 'joshdick/onedark.vim'
 
 "custom
 Plug 'wakatime/vim-wakatime'
