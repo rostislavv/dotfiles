@@ -59,6 +59,10 @@ Plug 'wavded/vim-stylus', { 'for': 'stylus'  }"
 "Vue
 Plug 'posva/vim-vue'
 
+"python
+Plug 'vim-scripts/indentpython.vim'
+
+
 "collor chemas"
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
@@ -150,3 +154,15 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 
+" python
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=120
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+" remove whitespaces in line
+au BufWritePre * %s/\s\+$//e
