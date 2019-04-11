@@ -24,6 +24,8 @@ Plug 'eparreno/vim-l9'
 Plug 'vim-scripts/FuzzyFinder'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'jlanzarotta/bufexplorer'
+Plug 'bkad/CamelCaseMotion'
+Plug 'sjl/gundo.vim'
 
 "Ruby
 Plug 'tpope/vim-bundler', { 'for': 'ruby'  }
@@ -156,13 +158,19 @@ let g:ale_fixers['javascript'] = ['prettier']
 
 " python
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=120
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=120 |
+    \ set expandtab |
+    \ set autoindent |
     \ set fileformat=unix
 
 " remove whitespaces in line
 au BufWritePre * %s/\s\+$//e
+
+" CamelCaseMotion config
+call camelcasemotion#CreateMotionMappings(',') " should add , to movements - default like ',m', ',e'
+
+" gundo config
+let g:gundo_prefer_python3 = 1
